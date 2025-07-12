@@ -58,6 +58,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
     
+    // AppCompat for compatibility
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    
     // Jetpack Compose for TV
     implementation("androidx.tv:tv-foundation:1.0.0-alpha10")
     implementation("androidx.tv:tv-material:1.0.0-alpha10")
