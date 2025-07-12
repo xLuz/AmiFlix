@@ -226,7 +226,8 @@ fun FeaturedAnimeSection(
                 
                 OutlinedButton(
                     onClick = { onAnimeClick(anime) },
-                    colors = ButtonDefaults.outlinedButtonColors(
+                    colors = ButtonDefaults.colors(
+                        containerColor = Color.Transparent,
                         contentColor = Color.White
                     )
                 ) {

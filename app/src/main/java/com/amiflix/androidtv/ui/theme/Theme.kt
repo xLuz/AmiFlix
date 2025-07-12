@@ -27,6 +27,7 @@ val AccentGreen = Color(0xFF00B894)
 val AccentPink = Color(0xFFE84393)
 val AccentYellow = Color(0xFFFDCB6E)
 
+@OptIn(ExperimentalTvMaterial3Api::class)
 val DarkColorScheme = darkColorScheme(
     primary = AmiFlixPrimary,
     secondary = AmiFlixSecondary,
@@ -41,6 +42,7 @@ val DarkColorScheme = darkColorScheme(
     onError = AmiFlixOnError
 )
 
+@OptIn(ExperimentalTvMaterial3Api::class)
 val LightColorScheme = lightColorScheme(
     primary = AmiFlixPrimary,
     secondary = AmiFlixSecondary,
