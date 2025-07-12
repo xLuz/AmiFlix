@@ -26,9 +26,8 @@
 # Keep Retrofit interfaces
 -keep class com.amiflix.androidtv.data.api.** { *; }
 
-# Keep Hilt generated classes
--keep class dagger.hilt.** { *; }
--keep class * extends dagger.hilt.** { *; }
+# Keep R8 optimizations
+-keepattributes *Annotation*
 
 # Keep Jetpack Compose
 -keep class androidx.compose.** { *; }

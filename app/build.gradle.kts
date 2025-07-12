@@ -2,8 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
-    id("dagger.hilt.android.plugin")
-    id("kotlin-kapt")
 }
 
 android {
@@ -89,15 +87,9 @@ dependencies {
     // Web scraping
     implementation("org.jsoup:jsoup:1.17.2")
     
-    // Dependency Injection
-    implementation("com.google.dagger:hilt-android:2.48")
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
-    
-    // Room Database
+    // Room Database (using KSP instead of KAPT)
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
     
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")

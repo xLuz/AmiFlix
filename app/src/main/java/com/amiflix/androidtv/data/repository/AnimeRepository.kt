@@ -6,12 +6,9 @@ import com.amiflix.androidtv.data.models.StreamingSource
 import com.amiflix.androidtv.data.scraper.FrenchAnimeScraper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-class AnimeRepository @Inject constructor(
-    private val frenchAnimeScraper: FrenchAnimeScraper
+class AnimeRepository(
+    private val frenchAnimeScraper: FrenchAnimeScraper = FrenchAnimeScraper()
 ) {
     
     suspend fun getFeaturedAnime(): Flow<List<Anime>> = flow {
