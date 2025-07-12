@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude cache and temporary files -->
+    <exclude domain="cache" />
+    <exclude domain="no_backup" />
+    
+    <!-- Include user preferences and favorites -->
+    <include domain="shared_pref" path="favorites.xml" />
+    <include domain="shared_pref" path="settings.xml" />
+    <include domain="shared_pref" path="watch_history.xml" />
+</full-backup-content> 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation IDs -->
+    <item name="nav_home" type="id" />
+    <item name="nav_search" type="id" />
+    <item name="nav_favorites" type="id" />
+    <item name="nav_history" type="id" />
+    <item name="nav_settings" type="id" />
+    
+    <!-- Screen IDs -->
+    <item name="screen_home" type="id" />
+    <item name="screen_search" type="id" />
+    <item name="screen_favorites" type="id" />
+    <item name="screen_history" type="id" />
+    <item name="screen_settings" type="id" />
+    <item name="screen_anime_details" type="id" />
+    <item name="screen_player" type="id" />
+    
+    <!-- Component IDs -->
+    <item name="anime_card" type="id" />
+    <item name="featured_anime_card" type="id" />
+    <item name="navigation_sidebar" type="id" />
+    <item name="video_player" type="id" />
+</resources> 

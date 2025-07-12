@@ -1,0 +1,59 @@
+name: 🎌 Build AmiFlix APK
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: 🔨 Build APK
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+    
+    - name: ☕ Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+    
+    - name: 📱 Setup Android SDK
+      uses: android-actions/setup-android@v3
+    
+    - name: 🔧 Grant execute permission for gradlew
+      run: chmod +x gradlew
+    
+    - name: 🧹 Clean project
+      run: ./gradlew clean
+    
+    - name: 🔨 Build debug APK
+      run: ./gradlew assembleDebug --stacktrace
+    
+    - name: 📋 List APK files
+      run: find . -name "*.apk" -type f
+    
+    - name: 📤 Upload APK as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: 🎌-AmiFlix-Android-TV-APK
+        path: app/build/outputs/apk/debug/app-debug.apk
+        retention-days: 30
+    
+    - name: 📊 APK Info
+      run: |
+        APK_PATH="app/build/outputs/apk/debug/app-debug.apk"
+        if [ -f "$APK_PATH" ]; then
+          echo "✅ APK built successfully!"
+          echo "📦 APK size: $(du -h $APK_PATH | cut -f1)"
+          echo "📍 APK location: $APK_PATH"
+          echo "🎯 Ready for Android TV installation!"
+        else
+          echo "❌ APK not found!"
+          exit 1
+        fi 
